@@ -13,6 +13,12 @@ app = Flask(
     template_folder='../client/build'
 )
 
+
+@app.route('/')
+@app.route('/<int:id>')
+def index(id=0):
+    return render_template("index.html")
+    
 # Load environment variables
 load_dotenv()
 
